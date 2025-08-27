@@ -1,13 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- Botão de voltar no canto esquerdo -->
     <ion-buttons slot="start">
       <ion-button fill="clear" (click)="goToHome()">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <!-- Logo no título -->
     <ion-title>
       <img src="https://cdn.invertexto.com/img/invertexto.png" alt="LogoInvertexto" class="logo-invertexto">
     </ion-title>
@@ -17,12 +15,10 @@
 <ion-content [fullscreen]="true">
 
   <ion-list>
-    <!-- Mensagem de erro -->
     <ion-item lines="none" *ngIf="errorMessage">
       <ion-label color="danger">{{ errorMessage }}</ion-label>
     </ion-item>
 
-    <!-- Dados da pessoa -->
     <ion-item lines="none" *ngIf="pessoa">
       <ion-label>
         <h2>Dados da Pessoa</h2>
@@ -32,7 +28,6 @@
     </ion-item>
   </ion-list>
 
-  <!-- Botão para gerar nova pessoa -->
   <ion-button expand="block" (click)="getPessoa()" class="generate-button">
     Gerar Nova Pessoa
   </ion-button>

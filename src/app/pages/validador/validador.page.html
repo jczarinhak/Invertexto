@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Validador CPF/CNPJ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="floating">Digite o CPF ou CNPJ</ion-label>
+    <ion-input [(ngModel)]="valor"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="validar()">Validar</ion-button>
+
+  <ion-card *ngIf="resultado && !resultado.error">
+    <ion-card-content>
+      <p><strong>Documento:</strong> {{ resultado.value }}</p>
+      <p><strong>Tipo:</strong> {{ resultado.type?.toUpperCase() }}</p>
+      <p><strong>Válido:</strong> {{ resultado.valid ? 'Sim ✅' : 'Não ❌' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="resultado?.error">
+    <ion-card-content>
+      <p>❌ Erro ao validar documento. Tente novamente.</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

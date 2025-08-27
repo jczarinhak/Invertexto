@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'pessoa',
     loadComponent: () => import('./view/pessoa/pessoa.page').then( m => m.PessoaPage)
   },
+  {
+    path: 'validador',
+    loadComponent: () => import('./pages/validador/validador.page').then( m => m.ValidadorPage)
+  },
 ];
